@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Form } from 'semantic-ui-react'
+import './MolecularWeightCalculator.css';
+import { Form } from 'semantic-ui-react';
 const molFormula = require('molecular-formula');
 
 class MolecularWeightCalculatorForm extends Component {
@@ -51,6 +52,7 @@ class MolecularWeightCalculatorForm extends Component {
             <Form onSubmit={this.handleSubmit}>
                 <Form.Group>
                     <Form.Input
+                        className='formulaInput'
                         icon='flask'
                         iconPosition='left'
                         placeholder='Formula'
