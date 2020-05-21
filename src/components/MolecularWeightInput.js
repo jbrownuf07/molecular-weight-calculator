@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './styles/MolecularWeightCalculator.css';
-import { Input } from 'semantic-ui-react';
+import { Input, Popup } from 'semantic-ui-react';
 
 class MolecularWeightInput extends Component {
 
@@ -11,18 +11,23 @@ class MolecularWeightInput extends Component {
             formulaUpdate
         } = this.props;
 
-        return(
-            <Input
-                className='formulaInput'
-                icon='flask'
-                iconPosition='left'
-                placeholder='Formula'
-                value={chemicalFormula}
-                name='chemicalFormula'
-                error={massError}
-                onChange={formulaUpdate}
-             />
-        )
+        return(                
+            <Popup 
+                content='Please enter a chemical formula (eg. "H2O")'
+                trigger={
+                    <Input
+                        className='formulaInput'
+                        icon='flask'
+                        iconPosition='left'
+                        placeholder='Formula'
+                        value={chemicalFormula}
+                        name='chemicalFormula'
+                        error={massError}
+                        onChange={formulaUpdate}
+                    />
+                }
+            />
+        );
     }
 }
 
