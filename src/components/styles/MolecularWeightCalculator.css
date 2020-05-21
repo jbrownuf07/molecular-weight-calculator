@@ -1,0 +1,42 @@
+:root {
+    --MW_WIDTH: 500px;
+    --VALUE_LEFT_TAB: 20px;
+    --OUTPUT_LABEL_COLOR: #70afee;
+    --OUTPUT_VALUE_COLOR: #ffffbf;
+}
+
+.formulaInput {
+    width: var(--MW_WIDTH);
+}
+
+.formulaOutputArea {
+    margin-top: 20px;
+    background-color: #313639;
+    padding: 10px;
+    border-radius: 15px;
+    width: var(--MW_WIDTH);
+}
+
+.formulaOutputArea .formulaTag {
+    color: var(--OUTPUT_LABEL_COLOR);
+    height: 25px;
+}
+
+.formulaOutputArea .formulaOutput {
+    color: var(--OUTPUT_VALUE_COLOR);
+    margin-left: var(--VALUE_LEFT_TAB);
+    font-weight: bold;
+    height: 25px;
+}
+
+.formulaOutputArea .avgMassTag {
+    color: var(--OUTPUT_LABEL_COLOR);
+    height: 25px;
+}
+
+.formulaOutputArea .massOutput {
+    color: var(--OUTPUT_VALUE_COLOR);
+    margin-left: var(--VALUE_LEFT_TAB);
+    font-weight: bold;
+    height: 25px;
+}

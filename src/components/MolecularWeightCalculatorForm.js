@@ -1,7 +1,12 @@
 import React, { Component } from 'react';
-import './MolecularWeightCalculator.css';
-import { Form } from 'semantic-ui-react';
+import './styles/MolecularWeightCalculator.css';
+
+import MolecularWeightInput from './MolecularWeightInput';
+import MolecularWeightOutput from './MolecularWeightOutput';
+// import { Form } from 'semantic-ui-react';
 const molFormula = require('molecular-formula');
+
+
 
 class MolecularWeightCalculatorForm extends Component {
 
@@ -11,7 +16,6 @@ class MolecularWeightCalculatorForm extends Component {
         chemicalFormula: '', 
         formula: '', 
         mass: 0, 
-        averageMass: 0,
         massError: false 
     }
 
@@ -52,13 +56,22 @@ class MolecularWeightCalculatorForm extends Component {
             chemicalFormula, 
             formula, 
             mass, 
-            massError,
-            averageMass
+            massError
         } = this.state
 
         return (
             <div>
-                <Form onSubmit={this.handleSubmit}>
+                <MolecularWeightInput 
+                    chemicalFormula={chemicalFormula} 
+                    massError={massError}
+                    formulaUpdate={this.handleChange}
+                    />
+                
+                <MolecularWeightOutput
+                    formula={formula}
+                    mass={parseFloat(parseFloat(mass).toFixed(this.significantDigits()))}
+                    />
+                {/* <Form onSubmit={this.handleSubmit}>
                     <Form.Group>
                         <Form.Input
                             className='formulaInput'
@@ -70,7 +83,6 @@ class MolecularWeightCalculatorForm extends Component {
                             error={massError}
                             onChange={this.handleChange}
                         />
-                        {/* <Form.Button content='Submit' /> */}
                     </Form.Group>
                 </Form>
                 <strong>Chemical information:</strong>
@@ -79,7 +91,7 @@ class MolecularWeightCalculatorForm extends Component {
                     formula,
                     mass: parseFloat(parseFloat(mass).toFixed(this.significantDigits())),
                     averageMass
-                    }, null, 2)}</pre>
+                    }, null, 2)}</pre> */}
             </div>
         )
     }
