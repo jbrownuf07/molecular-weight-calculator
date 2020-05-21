@@ -5,10 +5,13 @@ const molFormula = require('molecular-formula');
 
 class MolecularWeightCalculatorForm extends Component {
 
+    significantDigits = () => 6;
+    
     state = { 
         chemicalFormula: '', 
         formula: '', 
         mass: 0, 
+        averageMass: 0,
         massError: false 
     }
 
@@ -45,33 +48,40 @@ class MolecularWeightCalculatorForm extends Component {
     }
 
     render() {
-    const { chemicalFormula, formula, mass, massError } = this.state
+        const { 
+            chemicalFormula, 
+            formula, 
+            mass, 
+            massError,
+            averageMass
+        } = this.state
 
-    return (
-        <div>
-            <Form onSubmit={this.handleSubmit}>
-                <Form.Group>
-                    <Form.Input
-                        className='formulaInput'
-                        icon='flask'
-                        iconPosition='left'
-                        placeholder='Formula'
-                        name='chemicalFormula'
-                        value={chemicalFormula}
-                        error={massError}
-                        onChange={this.handleChange}
-                    />
-                    {/* <Form.Button content='Submit' /> */}
-                </Form.Group>
-            </Form>
-            <strong>Chemical information:</strong>
-            <pre>{JSON.stringify({ 
-                chemicalFormula,
-                formula,
-                mass: parseFloat(parseFloat(mass).toFixed(4))
-                }, null, 2)}</pre>
-        </div>
-    )
+        return (
+            <div>
+                <Form onSubmit={this.handleSubmit}>
+                    <Form.Group>
+                        <Form.Input
+                            className='formulaInput'
+                            icon='flask'
+                            iconPosition='left'
+                            placeholder='Formula'
+                            name='chemicalFormula'
+                            value={chemicalFormula}
+                            error={massError}
+                            onChange={this.handleChange}
+                        />
+                        {/* <Form.Button content='Submit' /> */}
+                    </Form.Group>
+                </Form>
+                <strong>Chemical information:</strong>
+                <pre>{JSON.stringify({ 
+                    chemicalFormula,
+                    formula,
+                    mass: parseFloat(parseFloat(mass).toFixed(this.significantDigits())),
+                    averageMass
+                    }, null, 2)}</pre>
+            </div>
+        )
     }
 }
 
