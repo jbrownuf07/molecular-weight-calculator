@@ -1,5 +1,4 @@
 :root {
-    --MW_WIDTH: 500px;
     --VALUE_LEFT_TAB: 20px;
     --OUTPUT_LABEL_COLOR: #70afee;
     --OUTPUT_VALUE_COLOR: #ffffbf;
@@ -11,9 +10,12 @@
     padding: 0;
 }
 
+.mwWidth {
+    width: 500px;
+}
+
 .formulaInput {
     margin-top: 15px;
-    width: var(--MW_WIDTH);
 }
 
 .formulaOutputArea {
@@ -22,7 +24,6 @@
     background-color: #313639;
     padding: 10px;
     border-radius: 5px;
-    width: var(--MW_WIDTH);
 }
 
 .formulaOutputArea .formulaTag {
@@ -47,4 +48,10 @@
     margin-left: var(--VALUE_LEFT_TAB);
     font-weight: bold;
     height: 25px;
+}
+
+.incDecButtons {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;  
 }

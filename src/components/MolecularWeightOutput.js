@@ -12,9 +12,9 @@ class MolecularWeightOutput extends Component {
         return (
             <div
                 ref = {this.wrapper} 
-                className="formulaOutputArea">
-                <h3 className="avgMassTag">MW: 
-                    <span className="massOutput">{this.props.mass} g/mol</span>
+                className="formulaOutputArea mwWidth">
+                <h3 className="avgMassTag mwWidth">MW: 
+                    <span className="massOutput mwWidth">{this.props.mass} g/mol</span>
                 </h3>
                 
                 

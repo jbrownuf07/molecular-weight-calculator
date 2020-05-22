@@ -24,7 +24,7 @@ class MolecularWeightInput extends Component {
                 position="left center"
                 trigger={
                     <Input
-                        className='formulaInput'
+                        className='formulaInput mwWidth'
                         icon='flask'
                         iconPosition='left'
                         placeholder={`Formula ${id}`}
