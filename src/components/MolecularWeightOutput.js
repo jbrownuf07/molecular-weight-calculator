@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './styles/MolecularWeightCalculator.css';
+import './styles/MolecularWeightStyles.css'
 
 class MolecularWeightOutput extends Component {
 

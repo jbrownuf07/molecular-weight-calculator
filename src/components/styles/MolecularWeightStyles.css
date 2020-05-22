@@ -5,7 +5,14 @@
     --OUTPUT_VALUE_COLOR: #ffffbf;
 }
 
+.formulaList {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
 .formulaInput {
+    margin-top: 15px;
     width: var(--MW_WIDTH);
 }
 

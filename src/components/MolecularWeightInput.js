@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './styles/MolecularWeightCalculator.css';
+import './styles/MolecularWeightStyles.css'
 import { Input, Popup } from 'semantic-ui-react';
 
 class MolecularWeightInput extends Component {
@@ -11,6 +11,7 @@ class MolecularWeightInput extends Component {
 
     render() {
         const { 
+            id,
             chemicalFormula,
             massError,
             formulaUpdate
@@ -26,7 +27,7 @@ class MolecularWeightInput extends Component {
                         className='formulaInput'
                         icon='flask'
                         iconPosition='left'
-                        placeholder='Formula'
+                        placeholder={`Formula ${id}`}
                         value={chemicalFormula}
                         name='chemicalFormula'
                         error={massError}

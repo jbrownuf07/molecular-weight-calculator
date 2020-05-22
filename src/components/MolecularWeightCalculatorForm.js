@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './styles/MolecularWeightCalculator.css';
+import './styles/MolecularWeightStyles.css'
 
 import MolecularWeightInput from './MolecularWeightInput';
 import MolecularWeightOutput from './MolecularWeightOutput';
@@ -18,6 +18,7 @@ class MolecularWeightCalculatorForm extends Component {
     significantDigits = () => 6;
     
     state = { 
+        id: 1,
         chemicalFormula: '', 
         formula: '', 
         mass: 0, 
@@ -67,6 +68,7 @@ class MolecularWeightCalculatorForm extends Component {
         return (
             <div ref={this.wrapper}>
                 <MolecularWeightInput 
+                    id={this.props.id}
                     chemicalFormula={chemicalFormula} 
                     massError={massError}
                     formulaUpdate={this.handleChange}
