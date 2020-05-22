@@ -5,7 +5,7 @@ A simple molecular weight calculator for specified chemicals.
 First, install the dependencies.
 
 ```
-npm install
+yarn
 ```
 
 Next, start up the application.
