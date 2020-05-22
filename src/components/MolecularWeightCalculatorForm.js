@@ -10,6 +10,11 @@ const molFormula = require('molecular-formula');
 
 class MolecularWeightCalculatorForm extends Component {
 
+    constructor(props) {
+        super(props);
+        this.wrapper = React.createRef();
+    }
+
     significantDigits = () => 6;
     
     state = { 
@@ -60,7 +65,7 @@ class MolecularWeightCalculatorForm extends Component {
         } = this.state
 
         return (
-            <div>
+            <div ref={this.wrapper}>
                 <MolecularWeightInput 
                     chemicalFormula={chemicalFormula} 
                     massError={massError}

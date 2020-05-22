@@ -10,10 +10,11 @@
 }
 
 .formulaOutputArea {
-    margin-top: 20px;
+    display: inline-block;
+    margin-top: 5px;
     background-color: #313639;
     padding: 10px;
-    border-radius: 15px;
+    border-radius: 5px;
     width: var(--MW_WIDTH);
 }
 

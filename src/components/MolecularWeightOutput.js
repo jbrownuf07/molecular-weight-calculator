@@ -3,13 +3,21 @@ import './styles/MolecularWeightCalculator.css';
 
 class MolecularWeightOutput extends Component {
 
+    constructor(props) {
+        super(props);
+        this.wrapper=React.createRef();
+    }
+
     render() {
         return (
-            <div className="formulaOutputArea">
-                <h3 className="formulaTag">Formula</h3>
-                <p className="formulaOutput">{this.props.formula}</p>
-                <h3 className="avgMassTag">Average molecular mass</h3>
-                <p className="massOutput">{this.props.mass}</p>
+            <div
+                ref = {this.wrapper} 
+                className="formulaOutputArea">
+                <h3 className="avgMassTag">MW: 
+                    <span className="massOutput">{this.props.mass} g/mol</span>
+                </h3>
+                
+                
             </div>
         );
     }
