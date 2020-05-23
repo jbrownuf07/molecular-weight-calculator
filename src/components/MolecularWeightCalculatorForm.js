@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import './styles/MolecularWeightStyles.css'
-
 import MolecularWeightInput from './MolecularWeightInput';
 import MolecularWeightOutput from './MolecularWeightOutput';
-// import { Form } from 'semantic-ui-react';
 const molFormula = require('molecular-formula');
 
 
@@ -66,39 +64,18 @@ class MolecularWeightCalculatorForm extends Component {
         } = this.state
 
         return (
-            <div ref={this.wrapper}>
+            <div>
                 <MolecularWeightInput 
-                    id={this.props.id}
-                    chemicalFormula={chemicalFormula} 
-                    massError={massError}
-                    formulaUpdate={this.handleChange}
-                    />
-                
+                                    id={this.props.id}
+                                    chemicalFormula={chemicalFormula} 
+                                    massError={massError}
+                                    formulaUpdate={this.handleChange}
+                                    />
+                <br />
                 <MolecularWeightOutput
-                    formula={formula}
-                    mass={parseFloat(parseFloat(mass).toFixed(this.significantDigits()))}
-                    />
-                {/* <Form onSubmit={this.handleSubmit}>
-                    <Form.Group>
-                        <Form.Input
-                            className='formulaInput'
-                            icon='flask'
-                            iconPosition='left'
-                            placeholder='Formula'
-                            name='chemicalFormula'
-                            value={chemicalFormula}
-                            error={massError}
-                            onChange={this.handleChange}
-                        />
-                    </Form.Group>
-                </Form>
-                <strong>Chemical information:</strong>
-                <pre>{JSON.stringify({ 
-                    chemicalFormula,
-                    formula,
-                    mass: parseFloat(parseFloat(mass).toFixed(this.significantDigits())),
-                    averageMass
-                    }, null, 2)}</pre> */}
+                                formula={formula}
+                                mass={parseFloat(parseFloat(mass).toFixed(this.significantDigits()))}
+                            />
             </div>
         )
     }
